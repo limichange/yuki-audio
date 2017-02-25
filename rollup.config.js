@@ -2,14 +2,11 @@ import buble from 'rollup-plugin-buble'
 import commonjs from 'rollup-plugin-commonjs'
 import nodeResolve from 'rollup-plugin-node-resolve'
 
-let targets = [ { dest: 'dist/yuki-audio.js', format: 'umd' } ]
-
-if (process.env.BUILD) {
-  targets = targets.concat([
-    { dest: 'dist/yuki-audio.common.js', format: 'cjs' },
-    { dest: 'dist/yuki-audio.es5.js', format: 'es' }
-  ])
-}
+let targets = [
+  { dest: 'dist/yuki-audio.js', format: 'umd' },
+  { dest: 'dist/yuki-audio.common.js', format: 'cjs' },
+  { dest: 'dist/yuki-audio.es5.js', format: 'es' }
+]
 
 export default {
   entry: 'src/index.js',
